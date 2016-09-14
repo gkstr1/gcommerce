@@ -1,4 +1,10 @@
 
+  <%if signed_in?%>
+    <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@sneaker), removeUrl: remove_from_cart_path(@sneaker)} do%>
+      <i class="fi-shopping-cart"></i>
+      <span><%=@cart_action%></span> Cart
+    <%end%>
+  <%end%>
 
 <div class="large-9 small-12 column">
   <h3>

@@ -1,28 +1,21 @@
 class SneakersController < ApplicationController
   before_action :set_sneaker, only: [:show, :edit, :update, :destroy]
 
-  # GET /sneakers
-  # GET /sneakers.json
   def index
     @sneakers = Sneaker.all
   end
 
-  # GET /sneakers/1
-  # GET /sneakers/1.json
+ 
   def show
   end
 
-  # GET /sneakers/new
   def new
     @sneaker = Sneaker.new
   end
 
-  # GET /sneakers/1/edit
   def edit
   end
 
-  # POST /sneakers
-  # POST /sneakers.json
   def create
     @sneaker = Sneaker.new(sneaker_params)
 
@@ -37,8 +30,6 @@ class SneakersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /sneakers/1
-  # PATCH/PUT /sneakers/1.json
   def update
     respond_to do |format|
       if @sneaker.update(sneaker_params)
@@ -51,8 +42,6 @@ class SneakersController < ApplicationController
     end
   end
 
-  # DELETE /sneakers/1
-  # DELETE /sneakers/1.json
   def destroy
     @sneaker.destroy
     respond_to do |format|
@@ -62,12 +51,10 @@ class SneakersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_sneaker
       @sneaker = Sneaker.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def sneaker_params
       params.require(:sneaker).permit(:title, :release_year, :price, :description, :size, :color)
     end

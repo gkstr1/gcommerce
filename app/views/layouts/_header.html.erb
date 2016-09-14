@@ -13,6 +13,13 @@
           <li><a href="#">Womans</a></li>
           <li><a href="#">Kids</a></li>
           <li><a href="#">Sale</a></li>
+          <li>
+          <%= link_to cart_path do%>
+              <i class="fi-shopping-cart"></i>
+              My Cart
+              (<span class="cart-count"><%=current_user.cart_count%></span>)
+          <%end%>
+          </li>
         </ul>
       </div>
     </div>
