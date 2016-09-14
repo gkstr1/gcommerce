@@ -26,3 +26,11 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'foundation-rails'
+gem 'devise'
+gem 'foundation_rails_helper'
+
+group :development do
+  gem "better_errors"
+end
+
+gem "binding_of_caller"

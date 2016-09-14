@@ -12,10 +12,15 @@
   </head>
     
   <body>
+    
     <%= render "layouts/header" %>
     <%= render "layouts/alerts" %>
     <%= render "layouts/container" %>
+    
     <div id="main-content" class="row full-min-height">
+    
+    <%= display_flash_messages %>
+    
     <%= yield %>
     
     <footer class="row">

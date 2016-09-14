@@ -1,28 +1,24 @@
 class SneakersController < ApplicationController
   before_action :set_sneaker, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
-  # GET /sneakers
-  # GET /sneakers.json
+
   def index
-    @sneakers = Sneaker.all
+    @sneaker = Sneakers.all
   end
-
-  # GET /sneakers/1
-  # GET /sneakers/1.json
+  
   def show
   end
 
   # GET /sneakers/new
   def new
-    @sneaker = Sneaker.new
+    @sneaker = current_user.Sneaker.build
   end
 
   # GET /sneakers/1/edit
   def edit
   end
 
-  # POST /sneakers
-  # POST /sneakers.json
   def create
     @sneaker = Sneaker.new(sneaker_params)
 
