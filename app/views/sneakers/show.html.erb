@@ -1,34 +1,17 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @sneaker.title %>
-</p>
 
-<p>
-  <strong>Release year:</strong>
-  <%= @sneaker.release_year %>
-</p>
+<div class="large-9 small-12 column">
+  <h3>
+    <%= @sneaker.title %>
+    (<%= @sneaker.release_year %>)
+    <%=link_to @sneaker.description do%>
+      <%=image_tag asset_path("3.jpg")%>
+    <%end%>
+    
+  </h3>
+  <p class="label Sneaker-label radius mb1">$ <%= @sneaker.price %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @sneaker.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @sneaker.description %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @sneaker.size %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @sneaker.color %>
-</p>
-
+  <p><%= @sneaker.description %></p>
+</div>
 <%= link_to 'Edit', edit_sneaker_path(@sneaker) %> |
 <%= link_to 'Back', sneakers_path %>
